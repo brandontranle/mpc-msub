@@ -1,0 +1,128 @@
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
+
+html {
+  min-height: 100%;
+  background-color: white;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+#root {
+  scroll-behavior: smooth;
+}
+
+
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+}
+
+
+
+a,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
+button,
+svg,
+path {
+  transition: all 0.3s ease;
+}
+
+a,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-decoration: none;
+}
+
+
+.navbar-button::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: '2px';
+    bottom: '-2px';
+    left: 0;
+    background-color: '#'    
+
+}
+
+.menu-enter {
+  opacity: 0;
+  transform: translateY(-10px) translateX(-50%);
+}
+
+.menu-enter-active {
+  opacity: 1;
+  transform: translateY(0) translateX(-50%);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.menu-exit {
+  opacity: 1;
+  transform: translateY(0) translateX(-50%);
+}
+
+.menu-exit-active {
+  opacity: 0;
+  transform: translateY(-10px) translateX(-50%);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.bg-grid{
+  background-image:linear-gradient(90deg, #4f4f4f2e 1px, transparent 0), linear-gradient(180deg, #4f4f4f2e 1px, transparent 0);
+  background-size: 20px 20px;
+}
+
+.bg-radial-mask{
+  mask-image: radial-gradient(ellipse 80% 50% at 50% 0, #000 70%, transparent 110%);          
+}
+
+.side-mask {
+  mask-image: linear-gradient(90deg, transparent, #fff 20%, #fff 80%, transparent);
+}
+
+
+
+.marquee__content {
+  animation: scroll 10s linear infinite;
+}
+
+@keyframes scroll {
+ 
+  100% {
+    transform: translateX(calc(50% + 0.625rem));
+  }
+}
+
+.animate-scroll {
+  animation: scroll 20s linear infinite;
+  animation-play-state: running;
+}
+
+.faq-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+}
+
+.faq-content.open {
+  max-height: 500px; /* or adjust to an appropriate value */
+  padding-bottom: 1rem;
+}
